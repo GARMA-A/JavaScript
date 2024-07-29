@@ -1,0 +1,22 @@
+*{
+  margin: 0%;
+  padding: 0%;
+    background-color: var(--c);
+}
+:root
+{
+  --c: #425388;
+}
+.text{
+  
+display: flex;
+align-items: center;
+justify-content: center;
+height: 100vh;
+
+}
+.text h1{
+  border-radius: 50%;
+  letter-spacing: 0.5em;
+}
+
