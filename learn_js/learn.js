@@ -127,13 +127,13 @@
 
 //🔴
 //// Arrays methods ///////////////////////// 
-
+//
 // const friends = [' gorge ', 'josef', 'ali'];
-
-
+//
+//
 // friends.push('garma'); 
-// ['gorge' , 'josef' , 'ali' , 'garma']   like vectors in c++ -> vector<int> x ; x.push-back(10);
-
+// ['gorge' , 'josef' , 'ali' , 'garma']   //like vectors in c++ -> vector<int> x ; x.push-back(10);
+//
 // friends.length;  // = 4 now //🍏 
 
 // friends.unshift('john');//🍏 
@@ -1051,21 +1051,21 @@ happen on the child first then the parent
 
 
 
- ////🔴🔴 localStorage🔴🔴 //// 
- 
+ ////🔴🔴 localStorage🔴🔴 ////
+
 /*
   🔴 Set Item🔴
 localStorage.setItem('key', string);👇🔥
 this will store string in the url so if you get out the page
 and return the data will still there
 ----------------------------------🔥
-if you have object the localStorage only take string 
-so you need to convert obj->str by using 
+if you have object the localStorage only take string
+so you need to convert obj->str by using
 JSON.stringify(the obj);
 ----------------------------------🔥
 if you set localStorage multiple times to the same key
 it will make array of strings(objects) by the order
-you enter them 
+you enter them
 
 🔴Get Item🔴
 
@@ -1074,24 +1074,24 @@ will return the string you stored on it but if you stored
 obj and want to return the obj  str->obj
 use JSON.parse(the string)
 ----------------------------------🔥
-Dont use for big data because its blocking API slow down 
-your application 
+Dont use for big data because its blocking API slow down
+your application
 ----------------------------------🔥
 🔴remove Item🔴
 
 localStorage.removeItem('key');
-remove the item from the local storage if you dont 
+remove the item from the local storage if you dont
 want to remove but set it to empty you can use
 lacalStorage.setItem('the same key' , "");
 will not delete it but make it empty
 */
 
- ////🔴🔴 AsyncJs🔴🔴 ////
- 
- /*
- 🔴call Api data by name 🔴
- const request = new XMLHttpRequest();
- request.open('GET', 'https://restcountries.com/v3.1/name/egypt');
+////🔴🔴 AsyncJs🔴🔴 ////
+
+/*
+🔴call Api data by name 🔴
+const request = new XMLHttpRequest();
+request.open('GET', 'https://restcountries.com/v3.1/name/egypt');
 request.send();
 request.addEventListener('load', ()=> console.log(this.responseText););
 
@@ -1100,79 +1100,79 @@ request.addEventListener('load', ()=> console.log(this.responseText););
 
 fetch build a promise for us but what is promise
 
- a promise is a container for data that will be send 
- in the future like respond will come from APi
- we do not need to use events to handle asynchronous
- function 
+a promise is a container for data that will be send
+in the future like respond will come from APi
+we do not need to use events to handle asynchronous
+function
 
- there is two steps during make  promises 
- pending and settled 
- pending mean it wait for be use or to recive data
- settled is after promise been used will return two 
- state fulfilled mean that succefully get the data
- rejected mean that there is error happen when promis 
- try to get the data
-
-
- fetch('API endpoint link').then(function(response))
- (.then) is  a function that get function 
- the function that then get can recive the data that 
- the api send to us we always call it the respond 
- from the api and with this data we can do any thing 
- so the respond itself is obj have the data but you 
- need to convert it to json like that response.json()
- and return it to be another promise to handele by 
- then and use the data
-
- dont ask me why we create two promises that the way 
- javascript creator do it 🤷
-
- fetch(Api).then(function(reponse){return respnse.json()})
- .then(function(data){console.log(data)});
-
-  note that .then take another function to catch the errors
-  fetch((respond)=> respond ).then(()=> , (erorr)=>return erorr);
-   but there is a beter way to do that by 
-   use catch method on the end of all then program
+there is two steps during make  promises
+pending and settled
+pending mean it wait for be use or to recive data
+settled is after promise been used will return two
+state fulfilled mean that succefully get the data
+rejected mean that there is error happen when promis
+try to get the data
 
 
+fetch('API endpoint link').then(function(response))
+(.then) is  a function that get function
+the function that then get can recive the data that
+the api send to us we always call it the respond
+from the api and with this data we can do any thing
+so the respond itself is obj have the data but you
+need to convert it to json like that response.json()
+and return it to be another promise to handele by
+then and use the data
+
+dont ask me why we create two promises that the way
+javascript creator do it 🤷
+
+fetch(Api).then(function(reponse){return respnse.json()})
+.then(function(data){console.log(data)});
+
+ note that .then take another function to catch the errors
+ fetch((respond)=> respond ).then(()=> , (erorr)=>return erorr);
+  but there is a beter way to do that by
+  use catch method on the end of all then program
 
 
-   🔴 async key word 🔴
-async you can but it before the function and it will 
-convert the function to async function and will return 
-promise after this function end 
-inside async function we can have one or more 
-await   and what await do is basicaly wait for 
-the fetch or any thing to finsh before send the 
-promise back 
+
+
+  🔴 async key word 🔴
+async you can but it before the function and it will
+convert the function to async function and will return
+promise after this function end
+inside async function we can have one or more
+await   and what await do is basicaly wait for
+the fetch or any thing to finsh before send the
+promise back
 
 
 await Promise.all([promise , promise , promise])
- can take multiple promises and store it in array  
- of obj 
+can take multiple promises and store it in array
+of obj
 
- you have await Promise.race([Api url or promise , promise , promise ])
- that will return one promise the fastest one respond
+you have await Promise.race([Api url or promise , promise , promise ])
+that will return one promise the fastest one respond
 
- Promise.allSettled([p , p , p ])
- will return all the promise the only change between 
- the all and allSettled if any promise in the all
- reject it will not return it but in allSttled will 
- return the rejected promises
+Promise.allSettled([p , p , p ])
+will return all the promise the only change between
+the all and allSettled if any promise in the all
+reject it will not return it but in allSttled will
+return the rejected promises
 
-  🔴 use async await instead of fetch().then() 🔴  
-  ------------------------------------------------
-      const getAdvice = async function () {
-        const res = await fetch("API");
-        const data = await res.json();
-      };
-  -------------------------------------------------
-      fetch(Api).then(function(reponse){return respnse.json()})
- .then(function(data){console.log(data)});
-  -------------------------------------------------
- 
- */
+ 🔴 use async await instead of fetch().then() 🔴
+ ------------------------------------------------
+     const getAdvice = async function () {
+       const res = await fetch("API");
+       const data = await res.json();
+     };
+ -------------------------------------------------
+     fetch(Api).then(function(reponse){return respnse.json()})
+.then(function(data){console.log(data)});
+ -------------------------------------------------
+
+*/
 /*
 🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴
 🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴
